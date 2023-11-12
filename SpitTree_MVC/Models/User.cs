@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -23,6 +24,9 @@ namespace SpitTree_MVC.Models
         [Required]
         [Display(Name = "Post Code")]
         public string PostCode { get; set; }
+
+        //NAVIGATION PROPERTIES
+        public List<Post> Posts { get; set; }
 
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)

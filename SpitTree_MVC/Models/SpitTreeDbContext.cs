@@ -9,6 +9,9 @@ namespace SpitTree_MVC.Models
 {
         public class SpitTreeDbContext : IdentityDbContext<User>
         {
+            public DbSet<Category> Categories { get; set; }
+            public DbSet<Post> Posts { get; set; }
+
             public SpitTreeDbContext()
                 : base("SpitTreeConnection2", throwIfV1Schema: false)
             {
