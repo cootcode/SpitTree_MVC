@@ -151,10 +151,29 @@ namespace SpitTree_MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new User { UserName = model.Email, Email = model.Email };
+                //create user
+                var user = new User { 
+                    UserName = model.Email, 
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    Street = model.Street,
+                    City = model.City,
+                    PostCode = model.PostCode,
+                    PhoneNumber = model.PhoneNumber
+                };
+
+                //store the password (hashed)
                 var result = await UserManager.CreateAsync(user, model.Password);
+
+                //if user was crated succesfully then
                 if (result.Succeeded)
                 {
+                    //**************************************************
+                    //assign the user to the member role
+                    await UserManager.AddToRoleAsync(user.Id, "Member");
+
+                    //**************************************************
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771

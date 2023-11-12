@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,10 @@ namespace SpitTree_MVC.Models
         public class SpitTreeDbContext : IdentityDbContext<User>
         {
             public SpitTreeDbContext()
-                : base("DefaultConnection", throwIfV1Schema: false)
+                : base("SpitTreeConnection2", throwIfV1Schema: false)
             {
+
+            Database.SetInitializer(new DatabaseInitializer());
             }
 
             public static SpitTreeDbContext Create()
