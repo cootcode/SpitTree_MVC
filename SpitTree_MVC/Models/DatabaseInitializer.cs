@@ -85,7 +85,7 @@ namespace SpitTree_MVC.Models
 
                     var member1 = new User()
                     {
-                        UserName = "member@gmail.com",
+                        UserName = "member1@gmail.com",
                         Email = "member1@gmail.com",
                         FirstName = "Paul",
                         LastName = "Goat",
@@ -163,7 +163,7 @@ namespace SpitTree_MVC.Models
                         Price = 145000m,
                         DatePosted = new DateTime(2019, 1, 1, 8, 0, 15), // this is the date when the post/ad was created
                         DateExpired = new DateTime(2019, 1, 1, 8, 0, 15).AddDays(14), //the post will expire after 14 days
-                        User = member2,
+                        User = member1,
                         Category = cat2
                     };
 
@@ -194,7 +194,7 @@ namespace SpitTree_MVC.Models
                         Price = 56000m,
                         DatePosted = new DateTime(2019, 1, 25, 6, 0, 15), // this is the date when the post/ad was created
                         DateExpired = new DateTime(2019, 1, 25, 6, 0, 15).AddDays(14), //the post will expire after 14 days
-                        User = member2,
+                        User = member1,
                         Category = cat1
                     };
 
@@ -225,7 +225,7 @@ namespace SpitTree_MVC.Models
                         Price = 34000m,
                         DatePosted = new DateTime(2019, 4, 5, 5, 0, 15), // this is the date when the post/ad was created
                         DateExpired = new DateTime(2019, 4, 5, 5, 0, 15).AddDays(14), //the post will expire after 14 days
-                        User = member2,
+                        User = member1,
                         Category = cat1
                     };
 
